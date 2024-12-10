@@ -13,14 +13,14 @@ import { InjectModel } from '@nestjs/mongoose';
 export class PokemonService {
   constructor(
     @InjectModel(Pokemon.name)
-    private readonly prokemonModel: Model<Pokemon>,
+    private readonly pokemonModel: Model<Pokemon>,
   ) {}
 
   async create(createPokemonDto: CreatePokemonDto) {
     createPokemonDto.name = createPokemonDto.name.toLowerCase();
 
     try {
-      const pokemon = await this.prokemonModel.create(createPokemonDto);
+      const pokemon = await this.pokemonModel.create(createPokemonDto);
       return pokemon;
     } catch (error) {
       if (error.code === 11000) {
