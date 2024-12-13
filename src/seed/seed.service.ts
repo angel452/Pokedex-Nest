@@ -15,6 +15,9 @@ export class SeedService {
   ) {}
 
   async executeSeed() {
+    // Eliminamos todos los registros de la base de datos
+    await this.pokemonModel.deleteMany({});
+
     const { data } = await this.axios.get<PokeResponse>(
       'https://pokeapi.co/api/v2/pokemon?limit=10',
     );
