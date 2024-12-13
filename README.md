@@ -47,3 +47,10 @@ $ npm run start:prod
 ```bash
 $ docker-compose up -d
 ```
+
+## Construir la base de datos
+
+```bash
+# Endpoint
+http://localhost:3000/api/v2/seed
+```
