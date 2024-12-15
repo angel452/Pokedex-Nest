@@ -48,6 +48,18 @@ $ npm run start:prod
 $ docker-compose up -d
 ```
 
+## Clonar el archivo __.env.template__ y renombrarlo a __.env__ con nuestras variables de entorno
+
+```bash 
+$ cp .env.template .env
+```
+
+## Ejecutar la aplicacion en DESARROLLO
+
+```bash
+$ npm run start:dev
+```
+
 ## Construir la base de datos
 
 ```bash
