@@ -48,7 +48,7 @@ export class PokemonService {
     if (!isNaN(+id)) {
       pokemon = await this.pokemonModel.findOne({ no: id });
       console.log(
-        `Pokemon encontrado por numeroOrden: ${JSON.stringify(pokemon)}`,
+        `Pokemon encontrado por numero de orden: ${JSON.stringify(pokemon)}`,
       );
     }
 

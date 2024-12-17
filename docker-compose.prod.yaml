@@ -6,16 +6,19 @@ services:
       - db
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
+    image: pokedex-docker
     container_name: pokedexapp
-    restart: always
+    restart: always # reiniciar el contenedor si se detiene
     ports:
       - "${PORT}:${PORT}"
+    # working_dir: /var/www/pokedex
     environment:
-      PORT: ${PORT}
       MONGODB: ${MONGODB}
-    volumes:
-      - ./:/app
+      PORT: ${PORT}
+      #DEFAULT_LIMIT: ${DEFAULT_LIMIT}
+    # volumes:
+    #   - ./:/var/www/pokedex
 
   db:
     image: mongo:5
@@ -24,6 +27,6 @@ services:
     ports:
       - 27017:27017
     environment:
-      MONGO_DATABASE: nest-pokemon
+      MONGODB_DATABASE: nest-pokemon
     volumes:
       - ./mongo:/data/db
