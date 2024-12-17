@@ -54,6 +54,35 @@ $ docker-compose up -d
 $ cp .env.template .env
 ```
 
+## Docker
+
+### Desarrollo
+
+```bash
+# Construir la imagen
+$ docker compose -f docker-compose.yml --env-file .env up -d --build
+
+# Detener la imagen
+$ docker compose down
+
+# Correr la imagen
+$ docker compose -f docker-compose.yml --env-file .env up -d
+```
+
+### Producción
+
+```bash
+# Construir la imagen
+$ docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
+
+# Detener la imagen
+$ docker compose down
+
+# Correr la imagen
+$ docker compose -f docker-compose.prod.yml --env-file .env.prod up -d
+```
+
+
 ## Ejecutar la aplicacion en DESARROLLO
 
 ```bash
